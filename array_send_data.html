@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> POSTing data </title>
+        <style> div#button{
+                display:block;
+                background:lightblue;
+                padding:5px;
+                border-radius:5px;
+                }
+        
+        </style>
+    </head>
+    
+    <body>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+    var address = "http://10.29.55.99:5000/test_api";
+    $(document).ready(function(){
+      $("button0").click(function(){
+        $.post(address,
+        {
+          '0': "43",
+          '1': "144",
+          '2': "-182"
+        },
+        function(data,status){
+          alert("Data: " + data + "\nStatus: " + status);
+        });
+      });
+    });
+    
+    
+    $(document).ready(function(){
+      $("button1").click(function(){
+        $.post(address,
+        {
+          '0': "44",
+          '1': "267",
+          '2': "-293"
+        },
+        function(data,status){
+          alert("Data: " + data + "\nStatus: " + status);
+        });
+      });
+    });
+    
+    
+    $(document).ready(function(){
+      $("button2").click(function(){
+        $.post(address,
+        {
+          '0': "45",
+          '1': "-60",
+          '2': "139"
+        },
+        function(data,status){
+          alert("Data: " + data + "\nStatus: " + status);
+        });
+      });
+    });
+    
+    $(document).ready(function(){
+      $("button3").click(function(){
+        $.post(address,
+        {
+          '0': "END"
+        },
+        function(data,status){
+          alert("Data: " + data + "\nStatus: " + status);
+        });
+      });
+    });
+    </script>
+    
+    <div id="button"> <button0> Send row 43 </button0> </div>
+    <br>
+    <div id="button"> <button1> Send row 44 </button1> </div>
+    <br>
+    <div id="button"> <button2> Send row 45 </button2> </div>
+    <br>
+    <div id="button"> <button3> Send END </button3> </div>
+    
+    </body>
+    
+</html>
